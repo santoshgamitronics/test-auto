@@ -16,9 +16,9 @@ function createWindow () {
   mainWindow.on('closed', function () {
     mainWindow = null;
   });
-  setInterval(() => {
-    autoUpdater.checkForUpdatesAndNotify();
-  }, 2000);
+  // setInterval(() => {
+  //   autoUpdater.checkForUpdatesAndNotify();
+  // }, 2000);
 }
 
 app.on('ready', () => {
