@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain, autoUpdater } = require('electron');
+const log = require("electron-log");
 
 let mainWindow;
 
@@ -15,13 +16,6 @@ function createWindow () {
     mainWindow = null;
   });
   mainWindow.once('ready-to-show', () => {
-    autoUpdater.setFeedURL({
-      provider: 'github',
-      owner: [santoshgamitronics],
-      repo: [test-auto],
-      token: [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],
-    });
-
     autoUpdater.checkForUpdatesAndNotify();
   });
 }
@@ -52,6 +46,11 @@ autoUpdater.on('update-available', () => {
 
 autoUpdater.on('update-downloaded', () => {
   mainWindow.webContents.send('update_downloaded');
+});
+
+autoUpdater.on('error', message => {
+  console.error('There was a problem updating the application');
+  console.error(message);
 });
 
 ipcMain.on('restart_app', () => {

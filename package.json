@@ -4,8 +4,8 @@
   "description": "",
   "main": "main.js",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/santoshgamitronics/test-auto.git"
+    "type": "git",
+    "url": "https://github.com/santoshgamitronics/test-auto.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,6 +20,7 @@
     "electron-builder": "22.11.7"
   },
   "dependencies": {
+    "electron-log": "^4.4.6",
     "electron-updater": "4.3.8"
   }
 }
