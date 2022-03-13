@@ -1,5 +1,6 @@
-const { app, BrowserWindow, ipcMain, autoUpdater } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const log = require("electron-log");
+const {autoUpdater} = require("electron-updater");
 
 let mainWindow;
 
@@ -16,7 +17,7 @@ function createWindow () {
     mainWindow = null;
   });
   setInterval(() => {
-    autoUpdater.checkForUpdates();
+    autoUpdater.checkForUpdatesAndNotify();
   }, 2000);
 }
 
@@ -55,4 +56,10 @@ autoUpdater.on('error', message => {
 
 ipcMain.on('restart_app', () => {
   autoUpdater.quitAndInstall();
+});
+
+Object.defineProperty(app, 'isPackaged', {
+  get() {
+    return true;
+  }
 });
