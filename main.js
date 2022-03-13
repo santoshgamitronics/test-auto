@@ -15,6 +15,13 @@ function createWindow () {
     mainWindow = null;
   });
   mainWindow.once('ready-to-show', () => {
+    autoUpdater.setFeedURL({
+      provider: 'github',
+      owner: santoshgamitronics,
+      repo: test-auto,
+      token: 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,
+    });
+
     autoUpdater.checkForUpdatesAndNotify();
   });
 }
