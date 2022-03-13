@@ -1,22 +1,25 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "electron-auto-update-example",
+  "version": "1.0.1",
+  "description": "",
   "main": "main.js",
-  "scripts": {
-    "start": "electron ."
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/santoshgamitronics/test-auto.git"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "electron": "^17.1.2"
+    "electron": "^5.0.1",
+    "electron-builder": "^20.40.2"
+  },
+  "dependencies": {
+    "electron-updater": "^4.0.6"
   }
 }
