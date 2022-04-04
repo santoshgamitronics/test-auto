@@ -5,7 +5,7 @@
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/santoshgamitronics/test-auto.git"
+    "url": "git@github.com:santoshgamitronics/test-auto.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
